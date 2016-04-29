@@ -38,15 +38,20 @@
 #define NO_BOUNDRY 0
 #define WHITE_BOUNDRY 1
 #define FINISH_BOUNDRY 2
-#define WHITE_BOUNDARY_LOWER 700
-#define WHITE_BOUNDARY_UPPER 950
+#define WHITE_BOUNDRY_LOWER 750
+#define WHITE_BOUNDRY_UPPER 1000
 
 oi_t * init();
+//void slowFullScan(map_t *m);
+void slowFullScan();
 int rapidForwardScan();
 int detectColoredBoundry(oi_t * sensor_data);
-int determineBoundryType(int reading, int base);
-int moveCautiously(int cm, oi_t * sensorData);
+int determineBoundryType(int reading);
+void moveCautiously(int cm, oi_t * sensorData);
+int receiveCommand();
+int receiveQuantity();
 void print(char* s);
+void executeCommand(int command, int quantity, oi_t * sensor_data);
 void winProcedure(oi_t * sensorData);
 int main(void);
 
